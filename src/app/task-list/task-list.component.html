@@ -1,0 +1,35 @@
+<div class="task-list-container">
+  <div>
+    <div class="section-title">
+      <h1 class="text-center">To Do List</h1>
+    </div>
+    <div class="body">
+      <div class="search-box">
+        <input
+          class="form-control"
+          placeholder="Search..."
+          type="text"
+          [(ngModel)]="search"
+          (ngModelChange)="onSearch($event)"
+        />
+      </div>
+      <div class="list-task">
+        <app-task-item
+          *ngFor="let item of items$ | async"
+          [data]="item"
+          (onCheck)="handleCheckList($event)"
+          (onRemove)="removeItem(item.id)"
+        ></app-task-item>
+      </div>
+    </div>
+  </div>
+  <div class="bulk-action" *ngIf="listItemChecked?.length">
+    <div>Bulk Action:</div>
+    <div class="common-action">
+      <button class="btn-done" (click)="updateListItemChecked()">Done</button>
+      <button class="btn-remove" (click)="removeListItemChecked()">
+        Remove
+      </button>
+    </div>
+  </div>
+</div>

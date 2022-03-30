@@ -1,0 +1,13 @@
+<div class="calendar">
+  <input
+    [options]="datePickerOptions"
+    readonly
+    class="form-control bg-white"
+    placeholder="(mm/dd/yyyy)"
+    [(ngModel)]="selectedDate"
+    (click)="fieldName.toggleCalendar()"
+    #fieldName="angular-mydatepicker"
+    angular-mydatepicker
+    (ngModelChange)="onDateChange($event)"
+  />
+</div>

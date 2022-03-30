@@ -1,0 +1,93 @@
+.task {
+  display: flex;
+  align-items: center;
+  border: 1px solid #cccccc;
+  padding: 20px;
+  .title {
+    font-size: 20px;
+    margin: 0;
+    color: #6e6e6e;
+    font-weight: 400;
+  }
+  .common-action {
+    margin-left: auto;
+    button {
+      width: 90px;
+      padding: 8px;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      margin-right: 16px;
+      cursor: pointer;
+      &.btn-detail {
+        background-color: #00c5c5;
+      }
+      &.btn-remove {
+        background-color: #db5454;
+      }
+    }
+  }
+}
+.task-item-detail {
+  border: 1px solid #cccccc;
+  padding: 24px 16px 0;
+}
+.checkbox {
+  display: inline-block;
+  position: relative;
+  font-size: 16px;
+  line-height: 24px;
+  margin-right: 16px;
+  &__input {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    opacity: 0;
+    z-index: 0;
+  }
+  &__label {
+    display: block;
+    padding: 0 0 0 24px;
+    margin-bottom: 0;
+    cursor: pointer;
+    &:before {
+      content: "";
+      position: absolute;
+      top: 4px;
+      left: 0;
+      width: 16px;
+      height: 16px;
+      background-color: transparent;
+      border: 2px solid rgba(0, 0, 0, 0.54);
+      border-radius: 2px;
+      z-index: 1;
+      transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+      transition-property: background-color, border-color;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      width: 6px;
+      height: 12px;
+      border-bottom: 2px solid transparent;
+      border-right: 2px solid transparent;
+      transform: rotate(45deg);
+      z-index: 2;
+      transition: border-color 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+  &__input:checked + &__label {
+    &:before {
+      background-color: #3f51b5;
+      border-color: #3f51b5;
+    }
+    &:after {
+      border-color: #fff;
+    }
+  }
+}

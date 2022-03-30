@@ -1,0 +1,16 @@
+<div class="task-item-container">
+  <div class="task" style="display: flex; align-items: center">
+    <div class="checkbox text-blank">
+      <input type="checkbox" [id]="checkboxId" class="checkbox__input" (change)="onChange($event)"/>
+      <label [for]="checkboxId" class="checkbox__label"></label>
+    </div>
+    <div class="title">{{ data.title }}</div>
+    <div class="common-action">
+      <button class="btn-detail" (click)="showDetail()">Detail</button>
+      <button class="btn-remove" (click)="remove()">Remove</button>
+    </div>
+  </div>
+  <div class="task-item-detail" *ngIf="isEdit">
+    <app-task-form [data]="data"></app-task-form>
+  </div>
+</div>

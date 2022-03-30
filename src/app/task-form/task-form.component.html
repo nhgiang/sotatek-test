@@ -1,0 +1,41 @@
+<div class="task-form-container">
+  <div class="section-title" *ngIf="!data">
+    <h1 class="text-center">New Task</h1>
+  </div>
+  <form [formGroup]="form" (ngSubmit)="submit()" class="form">
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Add new task..."
+        formControlName="title"
+      />
+    </div>
+    <div class="form-group">
+      <label for="">Description</label>
+      <textarea
+        rows="5"
+        class="form-control"
+        placeholder=""
+        formControlName="description"
+      ></textarea>
+    </div>
+    <div class="row">
+      <div class="form-group col-6">
+        <label for="">Due date</label>
+        <app-date-picker-control
+          formControlName="dueDate"
+        ></app-date-picker-control>
+      </div>
+      <div class="form-group col-6">
+        <label for="">Piority</label>
+        <select class="form-select" formControlName="piority">
+          <option [value]="Piority.LOW">Low</option>
+          <option [value]="Piority.NORMAL">Normal</option>
+          <option [value]="Piority.HIGH">High</option>
+        </select>
+      </div>
+    </div>
+    <button class="btn btn-submit">{{ data ? "Update" : "Add" }}</button>
+  </form>
+</div>

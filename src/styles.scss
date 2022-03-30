@@ -1,0 +1,84 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+}
+//grid
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.col-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 0 15px;
+}
+
+//ultilities
+.text-center {
+  text-align: center;
+}
+.text-blank {
+  &::before {
+    content: '\200B';
+  }
+}
+
+
+//form
+input:focus-visible {
+  outline: none;
+}
+
+label {
+  margin-bottom: 8px;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  appearance: none;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  &:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
+  }
+}
+.form-select {
+  width: 100%;
+  height: 38px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+//responsive
+@media only screen and (min-width: 1440px) {
+  .container {
+    max-width: 1360px;
+  }
+}
